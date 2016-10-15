@@ -7,6 +7,7 @@
   		ex3();
   		ex2();
   		ex4();
+  		ex6();
   	}
 
   		function ex2(){
@@ -58,5 +59,26 @@
 
   		}
 
+  		function ex6(){
+  			var maze = document.getElementById('maze');
+  			var l2 = document.querySelectorAll("div.boundary"); 
+			maze.addEventListener('mousemove', function restrict(){
+				var x = event.clientX;
+	    		var y = event.clientY;
+	    		var mWidth= maze.offsetWidth;
+	    		var mHeight= maze.offsetHeight;	
+	    		var mTop= maze.offsetTop;
+	    		var mLeft= maze.offsetLeft;
+
+	    		if(x > (mWidth + mLeft) && y > (mHeight + mTop))
+	    		{
+	    			for (var k = 0; k < l2.length; k++)
+					{
+					l2[k].setAttribute('class','boundary youlose');
+					}
+					document.getElementById("status").innerHTML="You lose";
+	    		}
+				});
+  		}
   	
 
