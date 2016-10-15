@@ -6,6 +6,7 @@
   		});
   		ex3();
   		ex2();
+  		ex4();
   	}
 
   		function ex2(){
@@ -22,7 +23,7 @@
 
   					if(eCount > 0)
   						{
-  						alert('You Lose! :(');
+  						 document.getElementById('status').innerHTML="You lose";
   						}
   				});
   			}
@@ -34,12 +35,28 @@
   				 	var response = document.getElementById("status");
 
   					if(eCount === 0){
-  						alert('You Win!');
+  						document.getElementById('status').innerHTML="You Win";
   						}
   				
   				});
 
   			}
+
+
+  		function ex4(){
+  			var begin= document.getElementById("start");
+  			var restart =document.querySelectorAll("div.boundary");
+  			begin.addEventListener('click', function clearwall(){
+  					for (var j = 0; j< restart.length; j++)
+			{				
+				restart[j].setAttribute('class','boundary');				
+			} 
+				eCount = 0;
+				document.getElementById('status').innerHTML="Click Mouse on \"S\" to begin";
+
+			});	
+
+  		}
 
   	
 
